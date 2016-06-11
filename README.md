@@ -19,10 +19,10 @@ Getting started couldn't be easier
 
 #### First you need to link the stylesheet
 ```html
-<link rel="stylesheet" type="text/css" href="css/lemonade.css">
+<link rel="stylesheet" type="text/css" href="css/lemonade.min.css">
 ```
 
-#### Structuring your layouts
+#### Default grid
 ```html
 <div class="frame">
     <div class="bit-3">Content here</div>
@@ -30,10 +30,44 @@ Getting started couldn't be easier
     <div class="bit-3">Content here</div>
 </div>
 ```
-Creating a three-column layout (for galleries for example) is really simple, this will scale down to 100% on mobile. Wrap the .bit's in a .frame class to clear the floats.
+Creating a three-column layout (a gallery for example) is really simple. Wrap the .bit's in a .frame class to clear the floats. This has no responsive widths applied to it, you will need to set these yourself by using the `bp` mixin like:
+
+```scss
+@include bp(xs) {}
+@include bp(sm) {}
+@include bp(md) {}
+@include bp(lg) {}
+@include bp(xl) {}
+```
+
+#### Mobile first approach
+Lemonade v3 has gone mobile-first which is the industry standard these days. All classes need to be prefixed `.bit-` followed by a breakpoint and the width of the grid. Below is an example of a 3 column grid.
+
+```html
+<div class="bit-xs-3">
+    <div class="box box--example">third (.bit-xs-3)</div>
+</div>
+
+<div class="bit-xs-3">
+    <div class="box box--example">third (.bit-xs-3)</div>
+</div>
+
+<div class="bit-xs-3">
+    <div class="box box--example">third (.bit-xs-3)</div>
+</div>
+```
+
+This will be a width of `33.333%` from the `xs` breakpoint but you can change this with another breakpoint class like:
+
+```html
+<div class="bit-md-2">
+```
+
+This will make the width `50%` at `md`
 
 #### Customising your grid
 Maybe you want to go old school and create a two-column layout, It's so easy all you need is basic math (along as the .bit- classes equal to 100%, it will be perfect).
+
 ```html
 <div class="frame">
     <div class="bit-75">Content here</div>
@@ -42,8 +76,8 @@ Maybe you want to go old school and create a two-column layout, It's so easy all
 ```
 Creating the css is also simple:
 ```css
-.bit-75 {width:75%;}
-.bit-25 {width:25%;}
+.bit-75 { width:75% }
+.bit-25 { width:25% }
 ```
 
 ### Support

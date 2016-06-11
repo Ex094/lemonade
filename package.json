@@ -1,14 +1,13 @@
 {
   "name": "lemonade-grid",
-  "version": "2.1.0",
-  "description": "lemonade",
+  "version": "3.0.0",
+  "description": "Lemonade Grid System",
   "main": "lemonade.css",
   "dependencies": {
     "gulp": "^3.9.0"
   },
   "devDependencies": {
     "gulp-sass": "^2.0.4",
-    "browser-sync": "^2.9.3",
     "gulp-autoprefixer": "^3.0.1",
     "gulp-minify-css": "^1.2.1",
     "gulp-rename": "^1.2.2"
